@@ -1,0 +1,12 @@
+development:
+  bucket: redmine-dev
+  access_key_id: AKIAJ3IGU3BTXLFZCOTA
+  secret_access_key: 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
+test:
+  bucket: redmine-test
+  access_key_id: AKIAJ3IGU3BTXLFZCOTA
+  secret_access_key: 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
+production:
+  bucket: redmine-pro
+  access_key_id: AKIAJ3IGU3BTXLFZCOTA
+  secret_access_key: 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
