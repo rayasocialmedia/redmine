@@ -1,0 +1,29 @@
+---
+language: ruby
+services: postgresql
+addons:
+  sauce_connect:
+    username:
+      secure: "DBW6gADMYFWtaU61qRiBN/kaR6nJKHJqXmxSFdGfnmXS1hPOJ7bBAkjrj/zmYi2/cLUIlyxj/XBjYTkIzRw18nWRUgqNKGreWBcxdtARtWDFOT/bFJllQEydqcZQBOcOOrthsOg7qXCuvwU8xdkm1MPr2cU/yvy5JzVdswOVLow="
+    access_key:
+      secure: "eBMo5+P8IVVZ7dQundeR7nw7ZF35awsH1b+cDe/HUmusJUfk+YHVIesxpodT2Ee7drvXZ0hWLi5B72yWkV6UXrxarnvYPHMH67l6+hqDC9FXoNV+YYwo8ArbDuEDcEGs9iTjAm0O6/1UquaAm7pfwJutXh12AORGPdAct/uwQvc="
+rvm:
+- 1.9.3
+- 2.0.0
+- jruby-19mode
+env:
+- REDMINE_VERSION=2.1.6
+- REDMINE_VERSION=2.2.4
+- REDMINE_VERSION=2.3.3
+- REDMINE_VERSION=master
+matrix:
+  allow_failures:
+  - env: REDMINE_VERSION=master
+  exclude:
+  - rvm: 2.0.0
+    env: REDMINE_VERSION=2.2.4
+  - rvm: 2.0.0
+    env: REDMINE_VERSION=2.1.6
+install:
+- unset BUNDLE_GEMFILE
+script: rake ci
